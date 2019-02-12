@@ -2,17 +2,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class VectorEmbedding {
-    private ArrayList vectors;
+    private ArrayList vectorList;
 
     public VectorEmbedding(){
-        this.vectors = new ArrayList();
+        this.vectorList = new ArrayList();
     }
 
     public void add(Vector v){
-        this.vectors.add(v);
+        this.vectorList.add(v);
     }
 
     public HashMap<String, Float[]> query(String word){
+        
+
+        // Print stuff here:
 
     }
 

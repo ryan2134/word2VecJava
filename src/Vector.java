@@ -11,4 +11,8 @@ public class Vector {
     }
 
 
+    public String getKey(){
+        return this.table.keySet().toString();
+    }
+
 }

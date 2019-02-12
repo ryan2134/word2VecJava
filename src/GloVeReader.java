@@ -28,5 +28,10 @@ public class GloVeReader {
             j++;
         }
         System.out.println(j);
+        System.out.println("Type a word to find words with similar meaning (type exit to finish simulation ");
+        Scanner sc = new Scanner(System.in);
+        String input = "";
+        input = scanner.next();
+        vEmbedding.query(input);
     }
 }
