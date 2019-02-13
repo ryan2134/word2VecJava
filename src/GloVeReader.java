@@ -29,7 +29,7 @@ public class GloVeReader {
             j++;
         }
 //        vEmbedding.printVectors();
-        System.out.println("Type a word to find words with similar meaning (type exit to finish simulation) ");
+        System.out.println("Type a word to find words with similar meaning (type exit to finish simulation)");
         Scanner sc = new Scanner(System.in);
         String input = "";
         input = sc.next();
