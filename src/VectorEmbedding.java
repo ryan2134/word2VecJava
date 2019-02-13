@@ -19,14 +19,17 @@ public class VectorEmbedding {
 //            if(v.table.get(word).equals(word)){
 //
 //                v.printVector();
+
 //            }
 //        }
         for (HashMap<String, Float[]> hashMap : vectorList) {
             System.out.println(hashMap.keySet());
             if(hashMap.containsKey(word)){
-                System.out.println("hello");
+                System.out.println("Found word");
+                break;
             }
         }
+        gatherCosSim(word);
         // Print stuff here:
 
 
@@ -45,15 +48,27 @@ public class VectorEmbedding {
 //            v.printVector();
 //        }
 //    }
-    public static double cosineSimilarity(double[] vectorA, double[] vectorB) {
-        double dotProduct = 0.0;
-        double normA = 0.0;
-        double normB = 0.0;
+
+    public void gatherCosSim(String word){
+        for (HashMap<String, Float[]> hashMap : vectorList) {
+            //System.out.println(hashMap.keySet());
+            if(hashMap.containsKey(word)){
+                continue;
+            }
+
+        }
+    }
+
+    // Assuming that the vectors will of the same length as each other
+    public static Float cosineSimilarity(Float[] vectorA, Float[] vectorB) {
+        float dotProduct = 0;
+        float normA = 0;
+        float normB = 0;
         for (int i = 0; i < vectorA.length; i++) {
             dotProduct += vectorA[i] * vectorB[i];
-            normA += Math.pow(vectorA[i], 2);
-            normB += Math.pow(vectorB[i], 2);
+            normA += (float) Math.pow(vectorA[i], 2);
+            normB += (float) Math.pow(vectorB[i], 2);
         }
-        return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+        return  dotProduct / (float) (Math.sqrt(normA) *  (float) Math.sqrt(normB));
     }
 }
