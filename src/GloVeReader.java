@@ -12,7 +12,7 @@ public class GloVeReader {
         VectorEmbedding vEmbedding = new VectorEmbedding();
         // Just to check how many wordVectors have gone through the system
         int j = 0;
-        while (scanner.hasNextLine() && j < 31) {
+        while (scanner.hasNextLine()) {
             // split space between word and float number embedding
             String[] words = scanner.nextLine().split(" ");
             // Array of Floats which will keep as values for words
