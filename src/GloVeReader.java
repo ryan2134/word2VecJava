@@ -10,7 +10,6 @@ public class GloVeReader {
         String input;
         Scanner scanner = new Scanner(new FileReader("glove.6B.50d.txt"));
         VectorEmbedding vEmbedding = new VectorEmbedding();
-        HashMap<String, Float[]> v = new HashMap<>();
         // Just to check how many wordVectors have gone through the system
         int j = 0;
         while (scanner.hasNextLine() ) {
@@ -33,6 +32,7 @@ public class GloVeReader {
         //vEmbedding.printVectors();
     }
 
+    // Simple query method that asks for the users input for the word2vec
     private static String getInput() {
         System.out.println("Type a word to find words with similar meaning (type exit to finish simulation)");
         Scanner sc = new Scanner(System.in);

@@ -67,13 +67,11 @@ public class VectorEmbedding extends HashMap<String, Float[]>{
         for (String word : v.keySet()) {
             //System.out.println(hashMap.keySet());
 
-            /* wtf */
-            if(word.contains((String) (query.keySet().toArray()[0]))){
-                System.out.println("hello");
+            /* CHECK */
+            if(((String) (query.keySet().toArray()[0])).contains(word)){
+                System.out.println(word);
                 continue;
             }
-            /* wtf */
-
             //System.out.println(query.keySet().toArray()[0]);
             current = cosineSimilarity(query.get(query.keySet().toArray()[0]), v.get(word));
             //System.out.println(current);
@@ -95,7 +93,8 @@ public class VectorEmbedding extends HashMap<String, Float[]>{
         }
     }
 
-    // Assuming that the vectors will of the same length as each other
+    // Assuming that the vectors will of the same length as each other, finds the cosine similarity of
+    // two vectors
     public Float cosineSimilarity(Float[] vectorA, Float[] vectorB) {
         float dotProduct = 0;
         float normA = 0;
