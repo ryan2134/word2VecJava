@@ -6,12 +6,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class GloVeReader {
+    // Main method that simply reads in the txt file and parses them correctly into the program
     public static void main(String[] args) throws IOException {
         String input;
         Scanner scanner = new Scanner(new FileReader("glove.6B.50d.txt"));
         VectorEmbedding vEmbedding = new VectorEmbedding();
-        // Just to check how many wordVectors have gone through the system
-        int j = 0;
         while (scanner.hasNextLine() ) {
             // Split space between word and float number embedding
             String[] words = scanner.nextLine().split(" ");
@@ -21,15 +20,10 @@ public class GloVeReader {
                 values[i - 1] = Float.parseFloat(words[i]);
             }
 
-            // Now all the values are stored in array, store it in the hashMap.
-//            HashMap<String, Float[]> x = new HashMap<>();
-//            x.put(words[0],values);
             vEmbedding.put(words[0],values);
-            j++;
         }
         input = getInput();
         vEmbedding.query(input);
-        //vEmbedding.printVectors();
     }
 
     // Simple query method that asks for the users input for the word2vec
