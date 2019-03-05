@@ -35,6 +35,9 @@ public class VectorEmbedding extends HashMap<String, Float[]>{
                 System.out.println("Found word");
                 query.put(input, this.get(input));
             }
+            else{
+
+            }
         }
         // Has to check if the user has entered the input in correct format and if the words exist in the embedding
         else if (words.length == 3 && this.containsKey(words[1]) && this.containsKey(words[2])){
