@@ -36,7 +36,11 @@ public class VectorEmbedding extends HashMap<String, Float[]>{
                 query.put(input, this.get(input));
             }
             else{
-
+                System.out.println("Invalid word, try again");
+                String newWord = "";
+                newWord = GloVeReader.getInput();
+                query(newWord);
+                System.exit(0);
             }
         }
         // Has to check if the user has entered the input in correct format and if the words exist in the embedding
@@ -62,7 +66,7 @@ public class VectorEmbedding extends HashMap<String, Float[]>{
         gatherCosSim(query, this);
     }
 
-    // Retrieves the top 10 similar words given the query via the cosine similarity, we go thru the embedding and
+    // Retrieves the top 10 similar words given the query via the cosine similarity, we go through the embedding and
     // then sort the whole ArrayList values and reverse to obtain the top 10
     public void gatherCosSim(HashMap<String, Float[]> query, VectorEmbedding v){
         ArrayList<Float> nums = new ArrayList<>();
