@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
-
+//Test
 public class GloVeReader {
     // Main method that simply reads in the txt file and parses them correctly into the program
     public static void main(String[] args) throws IOException {
