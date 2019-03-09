@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
-
+//Test
 public class GloVeReader {
     // Main method that simply reads in the txt file and parses them correctly into the program
     public static void main(String[] args) throws IOException {
@@ -27,11 +27,15 @@ public class GloVeReader {
     }
 
     // Simple query method that asks for the users input for the word2vec
-    private static String getInput() {
-        System.out.println("Type a word to find words with similar meaning (type exit to finish simulation)");
+    public static String getInput() {
+        System.out.println("Type a word to find words with similar meaning (type _exit to finish simulation)");
         Scanner sc = new Scanner(System.in);
         String input = "";
         input = sc.nextLine();
+        if(input.equals("_exit")){
+            System.out.println("Exiting Simulation");
+            System.exit(0);
+        }
         return input;
     }
 }
