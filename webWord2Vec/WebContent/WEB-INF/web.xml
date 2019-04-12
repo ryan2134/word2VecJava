@@ -14,5 +14,10 @@
 		<servlet-name>TestServlet</servlet-name>
 		<url-pattern>/test</url-pattern>
 	</servlet-mapping>
+	<listener>
+    <description>Application startup and shutdown events</description>
+    <display-name>Test</display-name>
+    <listener-class>TestServlet</listener-class>
+</listener>
 
 </web-app>
